@@ -8,7 +8,7 @@ public class SaveAndRead {
         try {
             MyObject myObject = MyObject.getInstance();
             FileOutputStream fosRef = new FileOutputStream(new File(
-                    "src/main/resources/myObjectFile.txt"));
+                    "myObjectFile.txt"));
             ObjectOutputStream oosRef = new ObjectOutputStream(fosRef);
             oosRef.writeObject(myObject);
             oosRef.close();
@@ -24,7 +24,7 @@ public class SaveAndRead {
 
         try {
             FileInputStream fisRef = new FileInputStream(new File(
-                    "src/main/resources/myObjectFile.txt"));
+                    "myObjectFile.txt"));
             ObjectInputStream iosRef = new ObjectInputStream(fisRef);
             MyObject myObject = (MyObject) iosRef.readObject();
             iosRef.close();

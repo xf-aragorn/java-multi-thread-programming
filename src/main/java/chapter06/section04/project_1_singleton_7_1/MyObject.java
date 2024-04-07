@@ -19,8 +19,9 @@ public class MyObject implements Serializable {
 		return MyObjectHandler.myObject;
 	}
 
-//	protected Object readResolve() throws ObjectStreamException {
-//		System.out.println("调用了readResolve方法！");
-//		return MyObjectHandler.myObject;
-//	}
+	//java.io.ObjectInputStream#readOrdinaryObject()的内部实现会调用这个方法！
+	private Object readResolve() throws ObjectStreamException {
+		System.out.println("调用了readResolve方法！");
+		return MyObjectHandler.myObject;
+	}
 }
